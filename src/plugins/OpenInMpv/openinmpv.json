@@ -1,0 +1,10 @@
+{
+"Name" : "Open in Mpv",
+"Comment" : "Open in Mpv",
+"Icon" : "configure",
+"Type" : "Service",
+"X-Falkon-Author" : "Eugene Petrov",
+"X-Falkon-Email" : "egikpetrov@gmail.com",
+"X-Falkon-Version" :"1.0",
+"X-Falkon-Settings" : "false"
+}
