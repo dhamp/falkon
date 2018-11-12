@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/openinmpv">
+        <file>openinmpv.json</file>
+        <file>data/icon-white.svg</file>
+        <file>data/icon.svg</file>
+    </qresource>
+</RCC>
