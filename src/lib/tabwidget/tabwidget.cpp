@@ -636,6 +636,22 @@ void TabWidget::closeToRight(int index)
     }
 }
 
+void TabWidget::unloadAllTabsInCurrentWindow(int index, bool pinned)
+{
+    bool excludeCurrent = index >= 0;
+    if (excludeCurrent && !validIndex(index)) {
+        return;
+    }
+
+    const auto tabs = allTabs(pinned);
+    for (const WebTab* tab : tabs) {
+        int tabIndex = tab->tabIndex();
+        if (excludeCurrent && tabIndex == index) {
+            continue;
+        }
+        unloadTab(tabIndex);
+    }
+}
 
 void TabWidget::closeToLeft(int index)
 {

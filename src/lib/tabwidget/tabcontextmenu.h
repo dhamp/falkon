@@ -54,6 +54,7 @@ Q_SIGNALS:
     void detachTab(int index);
     void loadTab(int index);
     void unloadTab(int index);
+    void unloadAllTabsInCurrentWindow(int index, bool pinned);
 
 private Q_SLOTS:
     void reloadTab() { Q_EMIT reloadTab(m_clickedTab); }
@@ -71,6 +72,10 @@ private Q_SLOTS:
     void closeToRight();
     void closeToLeft();
 
+    void unloadAllTabsInCurrentWindowExcludeCurrent() { Q_EMIT unloadAllTabsInCurrentWindow(m_clickedTab, false); }
+    void unloadAllTabsInCurrentWindowExcludeCurrentIncludePinned() { Q_EMIT unloadAllTabsInCurrentWindow(m_clickedTab, true); }
+    void unloadAllTabsInCurrentWindow() { Q_EMIT unloadAllTabsInCurrentWindow(-1, false); }
+    void unloadAllTabsInCurrentWindowWithPinned() { Q_EMIT unloadAllTabsInCurrentWindow(-1, true); }
 private:
     void init();
 
