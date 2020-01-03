@@ -46,6 +46,7 @@ TabContextMenu::TabContextMenu(int index, BrowserWindow *window, Options options
     connect(this, SIGNAL(detachTab(int)), tabWidget, SLOT(detachTab(int)));
     connect(this, SIGNAL(loadTab(int)), tabWidget, SLOT(loadTab(int)));
     connect(this, SIGNAL(unloadTab(int)), tabWidget, SLOT(unloadTab(int)));
+    connect(this, SIGNAL(unloadAllTabsInCurrentWindow(int, bool)), tabWidget, SLOT(unloadAllTabsInCurrentWindow(int,bool)));
 
     init();
 }
@@ -136,6 +137,14 @@ void TabContextMenu::init()
         }
 
         addSeparator();
+        QMenu* unloadAllMenu = addMenu(tr("Unload All"));
+
+        unloadAllMenu->addAction(tr("exclude current and pinned"), this, SLOT(unloadAllTabsInCurrentWindowExcludeCurrent()));
+        unloadAllMenu->addAction(tr("exclude current and include pinned"), this, SLOT(unloadAllTabsInCurrentWindowExcludeCurrentIncludePinned()));
+        unloadAllMenu->addAction(tr("exclude pinned"), this, SLOT(unloadAllTabsInCurrentWindow()));
+        unloadAllMenu->addAction(tr("include pinned"), this, SLOT(unloadAllTabsInCurrentWindowWithPinned()));
+        addMenu(unloadAllMenu);
+
         addAction(tr("Re&load All Tabs"), tabWidget, &TabWidget::reloadAllTabs);
         addAction(tr("Bookmark &All Tabs"), m_window, &BrowserWindow::bookmarkAllTabs);
         addSeparator();
