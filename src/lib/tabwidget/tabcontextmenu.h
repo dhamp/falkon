@@ -72,8 +72,10 @@ private Q_SLOTS:
     void closeToRight();
     void closeToLeft();
 
-    void unloadAllTabsInCurrentWindow() { Q_EMIT unloadAllTabsInCurrentWindow(m_clickedTab, false); }
-    void unloadAllTabsInCurrentWindowWithPinned() { Q_EMIT unloadAllTabsInCurrentWindow(m_clickedTab, true); }
+    void unloadAllTabsInCurrentWindowExcludeCurrent() { Q_EMIT unloadAllTabsInCurrentWindow(m_clickedTab, false); }
+    void unloadAllTabsInCurrentWindowExcludeCurrentIncludePinned() { Q_EMIT unloadAllTabsInCurrentWindow(m_clickedTab, true); }
+    void unloadAllTabsInCurrentWindow() { Q_EMIT unloadAllTabsInCurrentWindow(-1, false); }
+    void unloadAllTabsInCurrentWindowWithPinned() { Q_EMIT unloadAllTabsInCurrentWindow(-1, true); }
 private:
     void init();
 

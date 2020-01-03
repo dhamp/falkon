@@ -136,10 +136,12 @@ void TabContextMenu::init()
             addAction(tr("Unload Tab"), this, SLOT(unloadTab()));
         }
 
-        addAction(tr("Unload All"), this, SLOT(unloadAllTabsInCurrentWindow()));
-        addAction(tr("Unload All (include Pinned)"), this, SLOT(unloadAllTabsInCurrentWindowWithPinned()));
-
         addSeparator();
+        addAction(tr("Unload All (exclude current and pinned)"), this, SLOT(unloadAllTabsInCurrentWindowExcludeCurrent()));
+        addAction(tr("Unload All (exclude current and include pinned)"), this, SLOT(unloadAllTabsInCurrentWindowExcludeCurrentIncludePinned()));
+        addAction(tr("Unload All (exclude pinned)"), this, SLOT(unloadAllTabsInCurrentWindow()));
+        addAction(tr("Unload All (include pinned)"), this, SLOT(unloadAllTabsInCurrentWindowWithPinned()));
+
         addAction(tr("Re&load All Tabs"), tabWidget, &TabWidget::reloadAllTabs);
         addAction(tr("Bookmark &All Tabs"), m_window, &BrowserWindow::bookmarkAllTabs);
         addSeparator();
