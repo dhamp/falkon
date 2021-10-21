@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>460</width>
-    <height>344</height>
+    <width>556</width>
+    <height>406</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -66,6 +66,13 @@
       </item>
       <item row="2" column="1">
        <widget class="QComboBox" name="theme"/>
+      </item>
+      <item row="3" column="0" colspan="2">
+       <widget class="QCheckBox" name="cbTabListMouseWheelSwitchTabs">
+        <property name="text">
+         <string>Allow switch tabs via mouse wheel when scrollbar invisible</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
