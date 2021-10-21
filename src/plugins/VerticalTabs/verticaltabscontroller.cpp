@@ -47,8 +47,10 @@ QWidget *VerticalTabsController::createSideBarWidget(BrowserWindow *window)
     auto *widget = new VerticalTabsWidget(window);
     widget->setViewType(m_plugin->viewType());
     widget->setStyleSheet(m_plugin->styleSheet());
+    widget->setAllowSwitchTabsViaMouseWheel(m_plugin->allowSwitchTabsViaMouseWheel());
     connect(m_plugin, &VerticalTabsPlugin::viewTypeChanged, widget, &VerticalTabsWidget::setViewType);
     connect(m_plugin, &VerticalTabsPlugin::styleSheetChanged, widget, &VerticalTabsWidget::setStyleSheet);
+    connect(m_plugin, &VerticalTabsPlugin::allowSwitchTabsViaMouseWheelChanged, widget, &VerticalTabsWidget::setAllowSwitchTabsViaMouseWheel);
 
     m_widgets[window] = widget;
     return widget;

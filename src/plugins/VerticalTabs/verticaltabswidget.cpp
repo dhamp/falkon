@@ -170,23 +170,26 @@ void VerticalTabsWidget::wheelEvent(QWheelEvent *event)
         return;
     }
 
-    m_wheelHelper.processEvent(event);
-    while (WheelHelper::Direction direction = m_wheelHelper.takeDirection()) {
-        switch (direction) {
-        case WheelHelper::WheelUp:
-        case WheelHelper::WheelLeft:
-            switchToPreviousTab();
-            break;
+    if (m_allowSwitchTabsViaMouseWheel) {
+        m_wheelHelper.processEvent(event);
+        while (WheelHelper::Direction direction = m_wheelHelper.takeDirection()) {
+            switch (direction) {
+            case WheelHelper::WheelUp:
+            case WheelHelper::WheelLeft:
+                switchToPreviousTab();
+                break;
 
-        case WheelHelper::WheelDown:
-        case WheelHelper::WheelRight:
-            switchToNextTab();
-            break;
+            case WheelHelper::WheelDown:
+            case WheelHelper::WheelRight:
+                switchToNextTab();
+                break;
 
-        default:
-            break;
+            default:
+                break;
+            }
         }
     }
+
     event->accept();
 }
 
@@ -215,4 +218,9 @@ void VerticalTabsWidget::addChildTab()
     WebTab *tab = m_window->tabWidget()->webTab();
     m_window->addTab();
     m_window->tabWidget()->webTab()->setParentTab(tab);
+}
+
+void VerticalTabsWidget::setAllowSwitchTabsViaMouseWheel(bool value)
+{
+    m_allowSwitchTabsViaMouseWheel = value;
 }

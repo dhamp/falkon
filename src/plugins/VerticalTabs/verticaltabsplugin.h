@@ -63,9 +63,13 @@ public:
 
     QString styleSheet() const;
 
+    bool allowSwitchTabsViaMouseWheel() const;
+    void setAllowSwitchTabsViaMouseWheel(bool value);
+
 Q_SIGNALS:
     void viewTypeChanged(VerticalTabsPlugin::ViewType type);
     void styleSheetChanged(const QString &styleSheet);
+    void allowSwitchTabsViaMouseWheelChanged(bool value);
 
 private:
     void mainWindowCreated(BrowserWindow *window);
@@ -79,6 +83,7 @@ private:
     ViewType m_viewType = TabListView;
     bool m_replaceTabBar = false;
     AddChildBehavior m_addChildBehavior = AppendChild;
+    bool m_allowSwitchTabsViaMouseWheel = true;
     QString m_theme;
     QString m_styleSheet;
 };
