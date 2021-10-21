@@ -45,6 +45,7 @@ public:
     void setCurrentIndex(const int targetIndex);
 
     void addChildTab();
+    void setAllowSwitchTabsViaMouseWheel(bool value);
 
 private:
     WebTab *nextTab() const;
@@ -59,4 +60,5 @@ private:
     TabTreeModel *m_treeModel = nullptr;
     WheelHelper m_wheelHelper;
     QMenu *m_groupMenu;
+    bool m_allowSwitchTabsViaMouseWheel = false;
 };

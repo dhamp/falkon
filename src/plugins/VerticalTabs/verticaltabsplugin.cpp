@@ -45,6 +45,7 @@ void VerticalTabsPlugin::init(InitState state, const QString &settingsPath)
     settings.beginGroup(QSL("VerticalTabs"));
     m_viewType = static_cast<ViewType>(settings.value(QSL("ViewType"), TabListView).toInt());
     m_replaceTabBar = settings.value(QSL("ReplaceTabBar"), false).toBool();
+    m_allowSwitchTabsViaMouseWheel = settings.value(QSL("AllowSwitchTabsViaMouseWheel"), false).toBool();
     m_addChildBehavior = static_cast<AddChildBehavior>(settings.value(QSL("AddChildBehavior"), AppendChild).toInt());
     m_theme = settings.value(QSL("Theme"), QSL(":verticaltabs/data/themes/default.css")).toString();
     settings.endGroup();
@@ -181,6 +182,24 @@ void VerticalTabsPlugin::setTheme(const QString &theme)
 QString VerticalTabsPlugin::styleSheet() const
 {
     return m_styleSheet;
+}
+
+bool VerticalTabsPlugin::allowSwitchTabsViaMouseWheel() const
+{
+    return m_allowSwitchTabsViaMouseWheel;
+}
+
+void VerticalTabsPlugin::setAllowSwitchTabsViaMouseWheel(bool value)
+{
+    if (m_allowSwitchTabsViaMouseWheel == value) {
+        return;
+    }
+
+    m_allowSwitchTabsViaMouseWheel = value;
+    Q_EMIT allowSwitchTabsViaMouseWheelChanged(m_allowSwitchTabsViaMouseWheel);
+
+    QSettings settings(m_settingsPath, QSettings::IniFormat);
+    settings.setValue(QSL("VerticalTabs/AllowSwitchTabsViaMouseWheel"), m_allowSwitchTabsViaMouseWheel);
 }
 
 void VerticalTabsPlugin::mainWindowCreated(BrowserWindow *window)
