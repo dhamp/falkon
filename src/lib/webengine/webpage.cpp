@@ -442,9 +442,9 @@ bool WebPage::acceptNavigationRequest(const QUrl &url, QWebEnginePage::Navigatio
         }
     }
 
-    if (url.scheme() == QL1S("ocs") && OcsSupport::instance()->handleUrl(url)) {
-        return false;
-    }
+//    if (url.scheme() == QL1S("ocs") && OcsSupport::instance()->handleUrl(url)) {
+//        return false;
+//    }
 
     const bool result = QWebEnginePage::acceptNavigationRequest(url, type, isMainFrame);
 
