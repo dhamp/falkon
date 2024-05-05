@@ -44,7 +44,7 @@ public:
 
 	void populateWebViewMenu(QMenu *menu, WebView *view, const WebHitTestResult &r) override;
 
-public slots:
+public Q_SLOTS:
     void mainWindowCreated(BrowserWindow *window);
     void mainWindowDeleted(BrowserWindow *window);
 private Q_SLOTS:

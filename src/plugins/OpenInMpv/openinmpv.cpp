@@ -80,7 +80,7 @@ bool OpenInMpv::testPlugin()
     // There should be some testing if plugin is loaded correctly
     // If this function returns false, plugin is automatically unloaded
 
-    return (Qz::VERSION == QLatin1String(FALKON_VERSION));
+    return (QString::fromLatin1(Qz::VERSION) == QSL(FALKON_VERSION));
 }
 
 void OpenInMpv::populateWebViewMenu(QMenu* menu, WebView*, const WebHitTestResult &r)
@@ -105,7 +105,9 @@ void OpenInMpv::populateWebViewMenu(QMenu* menu, WebView*, const WebHitTestResul
 }
 
 void OpenInMpv::work(const QUrl url) {
-    QProcess::startDetached("/bin/mpv", QStringList() << url.toString());
+    QStringList args;
+    args.append(url.toString());
+    QProcess::startDetached(QSL("/bin/mpv"), args);
 }
 void OpenInMpv::actionSlot()
 {

@@ -7,7 +7,7 @@ set( OpenInMpv_SRCS
 set( OpenInMpv_RSCS
 	openinmpv.qrc
 )
-qt5_add_resources(RSCS ${OpenInMpv_RSCS})
+qt_add_resources(RSCS ${OpenInMpv_RSCS})
 
 ecm_create_qm_loader( OpenInMpv_SRCS falkon_OpenInMpv_qt )
 
