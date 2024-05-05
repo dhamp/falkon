@@ -196,7 +196,7 @@ void VerticalTabsPlugin::setAllowSwitchTabsViaMouseWheel(bool value)
     }
 
     m_allowSwitchTabsViaMouseWheel = value;
-    emit allowSwitchTabsViaMouseWheelChanged(m_allowSwitchTabsViaMouseWheel);
+    Q_EMIT allowSwitchTabsViaMouseWheelChanged(m_allowSwitchTabsViaMouseWheel);
 
     QSettings settings(m_settingsPath, QSettings::IniFormat);
     settings.setValue(QSL("VerticalTabs/AllowSwitchTabsViaMouseWheel"), m_allowSwitchTabsViaMouseWheel);
