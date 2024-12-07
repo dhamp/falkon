@@ -54,7 +54,8 @@ endif()
 add_definitions(-DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_NO_CAST_TO_ASCII)
 
 # Mandatory: Qt5/6
-find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Widgets Network Sql QuickWidgets PrintSupport WebChannel)
+# find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Widgets Network Sql QuickWidgets PrintSupport WebChannel)
+find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Widgets Network Sql PrintSupport WebChannel)
 find_package(Qt6WebEngineCore ${QT_MIN_VERSION} REQUIRED)
 find_package(Qt6WebEngineWidgets ${QT_MIN_VERSION} REQUIRED)
 if (BUILD_TESTING)
