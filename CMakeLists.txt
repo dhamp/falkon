@@ -106,9 +106,9 @@ find_package(OpenSSL REQUIRED)
 find_package(KF6 REQUIRED COMPONENTS Archive)
 
 # KF5I18n: Mandatory with downloaded translations (only for ki18n_install)
-if (EXISTS "${CMAKE_SOURCE_DIR}/po")
-    find_package(KF6I18n REQUIRED)
-endif()
+# if (EXISTS "${CMAKE_SOURCE_DIR}/po")
+#     find_package(KF6I18n REQUIRED)
+# endif()
 
 # Optional: GnomeKeyring
 find_package(PkgConfig)
