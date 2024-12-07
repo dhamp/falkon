@@ -55,7 +55,7 @@ add_definitions(-DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_NO_CAS
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
 
 # Mandatory: Qt6
-find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Widgets Network Sql QuickWidgets PrintSupport WebChannel)
+find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Widgets Network Sql PrintSupport WebChannel)
 if(Qt6Network_VERSION VERSION_GREATER_EQUAL "6.9.0")
     find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED NetworkPrivate)
 endif()
