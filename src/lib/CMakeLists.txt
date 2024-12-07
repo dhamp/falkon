@@ -160,7 +160,7 @@ set(SRCS ${SRCS}
     plugins/pluginproxy.cpp
     plugins/plugins.cpp
     plugins/speeddial.cpp
-    plugins/ocssupport.cpp
+#    plugins/ocssupport.cpp
     plugins/qml/qmlpluginloader.cpp
     plugins/qml/qmlplugin.cpp
     plugins/qml/qmlplugins.cpp
@@ -394,7 +394,7 @@ set(SRCS ${SRCS}
     plugins/pluginproxy.h
     plugins/plugins.h
     plugins/speeddial.h
-    plugins/ocssupport.h
+#    plugins/ocssupport.h
     plugins/qml/qmlpluginloader.h
     plugins/qml/qmlplugin.h
     plugins/qml/qmlplugins.h
@@ -593,18 +593,19 @@ get_property(QT_WEBENGINE_INCLUDE_DIRS TARGET Qt6::WebEngineCore PROPERTY INTERF
 target_include_directories(FalkonPrivate SYSTEM PUBLIC ${QT_WEBENGINE_INCLUDE_DIRS})
 
 target_link_libraries(FalkonPrivate
-    Qt6::Widgets
-    Qt6::WebEngineWidgets
-    Qt6::Network
-    Qt6::NetworkPrivate
-    Qt6::Sql
-    Qt6::PrintSupport
-    Qt6::QuickWidgets
-    Qt6::WebChannel
-    Qt6::Core5Compat
-    KF6::Archive
-    ${OPENSSL_CRYPTO_LIBRARY}
+	Qt6::Widgets
+	Qt6::WebEngineWidgets
+	Qt6::Network
+	Qt6::NetworkPrivate
+	Qt6::Sql
+	Qt6::PrintSupport
+	Qt6::QuickWidgets
+	Qt6::WebChannel
+	Qt6::Core5Compat
+	# KF6::Archive
+	${OPENSSL_CRYPTO_LIBRARY}
 )
+
 
 if (HAVE_LIBINTL)
     target_include_directories(FalkonPrivate SYSTEM PUBLIC ${Intl_INCLUDE_DIRS})
