@@ -443,9 +443,9 @@ bool WebPage::acceptNavigationRequest(const QUrl &url, QWebEnginePage::Navigatio
         }
     }
 
-    if (url.scheme() == QL1S("ocs") && OcsSupport::instance()->handleUrl(url)) {
-        return false;
-    }
+//    if (url.scheme() == QL1S("ocs") && OcsSupport::instance()->handleUrl(url)) {
+//        return false;
+//    }
 
     if (!internalSchemes().contains(url.scheme()) && !url.scheme().isEmpty()) {
         const auto *handler = profile()->urlSchemeHandler(url.scheme().toUtf8());

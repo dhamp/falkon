@@ -103,7 +103,7 @@ endif()
 find_package(OpenSSL REQUIRED)
 
 # Mandatory: KF6
-find_package(KF6 REQUIRED COMPONENTS Archive)
+#find_package(KF6 REQUIRED COMPONENTS Archive)
 
 # KF5I18n: Mandatory with downloaded translations (only for ki18n_install)
 # if (EXISTS "${CMAKE_SOURCE_DIR}/po")
