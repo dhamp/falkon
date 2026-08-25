@@ -1,8 +1,8 @@
-# SPDX-FileCopyrightText: 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Tommi Nieminen <translator@legisign.org>
+# SPDX-FileCopyrightText: 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Tommi Nieminen <translator@legisign.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-11-13 13:42+0200\n"
+"PO-Revision-Date: 2026-02-26 11:06+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -1098,36 +1098,24 @@ msgid "New Separator"
 msgstr "Uusi erotin"
 
 #: lib/bookmarks/bookmarksmanager.cpp:117
-#, fuzzy
-#| msgctxt "LineEdit|"
-#| msgid "Cu&t"
 msgctxt "BookmarksManager|"
 msgid "Cu&t"
-msgstr "&Leikkaa"
+msgstr "L&eikkaa"
 
 #: lib/bookmarks/bookmarksmanager.cpp:118
-#, fuzzy
-#| msgctxt "LineEdit|"
-#| msgid "&Copy"
 msgctxt "BookmarksManager|"
 msgid "&Copy"
 msgstr "&Kopioi"
 
 #: lib/bookmarks/bookmarksmanager.cpp:119
-#, fuzzy
-#| msgctxt "LineEdit|"
-#| msgid "&Paste"
 msgctxt "BookmarksManager|"
 msgid "&Paste"
 msgstr "L&iitä"
 
 #: lib/bookmarks/bookmarksmanager.cpp:121
-#, fuzzy
-#| msgctxt "CookieManager|"
-#| msgid "Remove"
 msgctxt "BookmarksManager|"
 msgid "&Remove"
-msgstr "Poista"
+msgstr "&Poista"
 
 #: lib/bookmarks/bookmarksmanager.ui:14
 msgctxt "BookmarksManager|"
